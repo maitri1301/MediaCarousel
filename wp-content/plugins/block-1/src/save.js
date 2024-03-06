@@ -15,17 +15,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-// export default function save(props) {
-// 	const { mediaURL } = props.attributes;
-// 	return (
-// 		<p { ...useBlockProps.save() }>
-// 			{ `Block 1 –${props.attributes.messages}!` }
-// 		</p>
-// 		{ mediaURL && (
-// 			<img src={mediaURL} alt="Uploaded Image" />
-// 		)}
-// 	);
-// }
+
 
 export default function save(props) {
     const { messages, repeater_field } = props.attributes;
