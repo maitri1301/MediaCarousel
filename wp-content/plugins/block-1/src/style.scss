@@ -1,16 +1,105 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+// /**
+//  * The following styles get applied both on the front of your site
+//  * and in the editor.
+//  *
+//  * Replace them with your own styles or remove the file completely.
+//  */
 
-.wp-block-create-block-block-1 {
-	background-color: #37a5e4;
-	color: #fff;
-	padding: 2px;
+// .wp-block-create-block-block-1 {
+// 	background-color: #37a5e4;
+// 	color: #fff;
+// 	padding: 2px;
+// }
+
+// video{
+// 	width: 100%;
+// }
+
+
+/**
+* Post Grid Editor + FrontEnd Styles
+*
+* CSS for both Frontend+Backend.
+*/
+
+$columns: 5;
+.gmfgb-mg-grid {
+	display: flex;
+    flex-wrap: wrap;
+	margin: 0;
+	font-size: 0;
+	position: relative;
+	@media (min-width: 768px) {
+		@for $i from 1 through $columns {
+			&.grid-size-#{$i} {
+				.gmfgb-mg-media,
+				.gmfgb-mg-button,
+				.gmfgb-mg-wrap {
+					width: calc((100% / $i) - ((20px * ($i - 1)) / $i));
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 561px) and (max-width: 767px) {
+		.gmfgb-mg-media,
+		.gmfgb-mg-button,
+		.gmfgb-mg-wrap {
+			width: calc(33.33% - 13.33px);
+			margin-bottom: 20px;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 560px) {
+		.gmfgb-mg-media,
+		.gmfgb-mg-button,
+		.gmfgb-mg-wrap {
+			width: calc(50% - 10px);
+			margin-bottom: 20px;
+		}
+	}
 }
 
-video{
-	width: 100%;
+.gmfgb-mg-fancy-custom {
+	.fancybox-video,
+	.fancybox-image {
+		position: static !important;
+	}
+}
+
+.image-caption {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 12px;
+	background-color: rgba(0, 0, 0, 0.25);
+	z-index: 1;
+	font-size: 16px;
+	color: #fff;
+    width: 100%;
+    max-height: 70%;
+    overflow: auto;
+}
+.gmfgb-mg-media {
+    position: relative;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 0;
+	border-radius: 20px;
+	overflow: hidden;
+    > a {
+        display: block;
+    }
+    img {
+        width: 100%;
+    }
+	svg {
+		background: #ffffff;
+		padding: 5px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		border-radius: 100px;
+	}
 }
