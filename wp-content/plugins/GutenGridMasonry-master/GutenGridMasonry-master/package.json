@@ -1,0 +1,23 @@
+{
+	"name": "grid-masonry-for-guten-blocks",
+	"version": "1.0.0",
+	"description": "Seamless Masonry Layouts with Gutenberg allows users to display their posts and media in a masonry design with integrated lightbox options.",
+	"author": "ZealousWeb",
+	"license": "GPLv3 or later License",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.14.0"
+	},
+	"dependencies": {
+		"@fancyapps/ui": "^5.0.24"
+	}
+}

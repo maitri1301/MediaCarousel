@@ -1,0 +1,47 @@
+/**
+* Post Grid Editor Styles
+*
+* CSS for just Backend enqueued after style.scss
+* which makes it higher in priority.
+*/
+/**
+* Post Grid Editor Styles
+*
+* CSS for both Frontend+Backend.
+*/
+
+.gmfgb-pg-grid {
+	.wp-block-post {
+		width: calc(50% - 10px);
+		padding: 0;
+	}
+	.block-editor-block-toolbar__slot,
+	.post-pagination {
+		display: none !important;
+	}
+	.gmfgb-pg-wrap > div {
+		height: 100%;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+	}
+	.gmfgb-pg-content {
+		width: 100%;
+	}
+}
+.gmfgb-pg-loop-wrap {
+	ul {
+		gap: 20px;
+	}
+}
+.editor-styles-wrapper {
+	.gmfgb-pg-grid {
+		.is-layout-grid {
+			display: flex !important;
+		}
+	}
+}
+
+.wp-block-post-featured-image .block-editor-media-placeholder {
+	height: 100%;
+}
