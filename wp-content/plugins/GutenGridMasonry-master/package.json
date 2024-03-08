@@ -15,7 +15,7 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.14.0"
+		"@wordpress/scripts": "^26.19.0"
 	},
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.24"

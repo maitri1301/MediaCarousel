@@ -1,0 +1,256 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block/post-grid/editor.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/**
+* Post Grid Editor Styles
+*
+* CSS for just Backend enqueued after style.scss
+* which makes it higher in priority.
+*/
+/**
+* Post Grid Editor Styles
+*
+* CSS for both Frontend+Backend.
+*/
+.gmfgb-pg-grid .wp-block-post {
+  width: calc(50% - 10px);
+  padding: 0;
+}
+.gmfgb-pg-grid .block-editor-block-toolbar__slot,
+.gmfgb-pg-grid .post-pagination {
+  display: none !important;
+}
+.gmfgb-pg-grid .gmfgb-pg-wrap > div {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.gmfgb-pg-grid .gmfgb-pg-content {
+  width: 100%;
+}
+
+.gmfgb-pg-loop-wrap ul {
+  gap: 20px;
+}
+
+.editor-styles-wrapper .gmfgb-pg-grid .is-layout-grid {
+  display: flex !important;
+}
+
+.wp-block-post-featured-image .block-editor-media-placeholder {
+  height: 100%;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block/media-grid/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/**
+* Post Grid Editor Styles
+*
+* CSS for just Backend enqueued after style.scss
+* which makes it higher in priority.
+*/
+.gmfgb-mg-grid {
+  display: flex;
+  flex-wrap: wrap !important;
+  gap: 20px;
+  padding: 0 !important;
+}
+.gmfgb-mg-grid .gmfgb-mg-button {
+  display: block;
+  min-height: 320px !important;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  border: 2px solid #000;
+  transition: 0.5s ease all;
+}
+.gmfgb-mg-grid .gmfgb-mg-button:hover {
+  background-color: inherit;
+}
+.gmfgb-mg-grid .gmfgb-mg-button:hover svg {
+  fill: white !important;
+}
+
+.gmfgb-mg-wrap {
+  position: relative;
+  padding-top: 100px;
+  min-height: 220px;
+}
+.gmfgb-mg-wrap .change-image {
+  background-color: #ffffff;
+  color: #ff0000;
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  z-index: 1;
+  margin: 0;
+  line-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 44px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.gmfgb-mg-wrap .change-image svg {
+  width: 20px;
+}
+.gmfgb-mg-wrap .remove-item {
+  background-color: #ffffff;
+  color: #ff0000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+.gmfgb-mg-wrap .upload-video-btn {
+  padding: 0;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.gmfgb-mg-wrap:hover .gmfgb-mg-content,
+.gmfgb-mg-wrap:hover .change-image,
+.gmfgb-mg-wrap:hover .remove-item, .gmfgb-mg-wrap:focus .gmfgb-mg-content,
+.gmfgb-mg-wrap:focus .change-image,
+.gmfgb-mg-wrap:focus .remove-item, .gmfgb-mg-wrap:active .gmfgb-mg-content,
+.gmfgb-mg-wrap:active .change-image,
+.gmfgb-mg-wrap:active .remove-item {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gmfgb-mg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gmfgb-mg-image img {
+  width: 100%;
+  height: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.gmfgb-mg-image:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.36);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gmfgb-mg-video {
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0;
+  border: 1px solid #949494;
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+}
+.gmfgb-mg-video span {
+  font-size: 13px;
+  padding: 3px 8px;
+  color: #fff;
+  display: block;
+}
+.gmfgb-mg-video svg {
+  width: 40px;
+  height: 24px;
+  fill: white;
+}
+
+.gmfgb-mg-content {
+  box-sizing: border-box;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.gmfgb-mg-content label {
+  display: none;
+}
+.gmfgb-mg-content input[type=text],
+.gmfgb-mg-content textarea {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+.gmfgb-mg-content input[type=text]::-webkit-input-placeholder,
+.gmfgb-mg-content textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ffffff;
+  opacity: 1;
+}
+.gmfgb-mg-content input[type=text]::-moz-placeholder,
+.gmfgb-mg-content textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+  opacity: 1;
+}
+.gmfgb-mg-content input[type=text]:-ms-input-placeholder,
+.gmfgb-mg-content textarea:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #ffffff;
+  opacity: 1;
+}
+.gmfgb-mg-content input[type=text]:-moz-placeholder,
+.gmfgb-mg-content textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ffffff;
+  opacity: 1;
+}
+.gmfgb-mg-content input[type=text]:focus,
+.gmfgb-mg-content textarea:focus {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+}
+.gmfgb-mg-content input[type=text]:focus::-webkit-input-placeholder,
+.gmfgb-mg-content textarea:focus::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #000000;
+}
+.gmfgb-mg-content input[type=text]:focus::-moz-placeholder,
+.gmfgb-mg-content textarea:focus::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000000;
+}
+.gmfgb-mg-content input[type=text]:focus:-ms-input-placeholder,
+.gmfgb-mg-content textarea:focus:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #000000;
+}
+.gmfgb-mg-content input[type=text]:focus:-moz-placeholder,
+.gmfgb-mg-content textarea:focus:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000000;
+}
+
+.custom-label {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=index.css.map*/
