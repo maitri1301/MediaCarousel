@@ -2,106 +2,19 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
 /**
-* Post Grid Editor + FrontEnd Styles
-*
-* CSS for both Frontend+Backend.
-*/
-.gmfgb-mg-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  font-size: 0;
-  position: relative;
-}
-@media (min-width: 768px) {
-  .gmfgb-mg-grid.grid-size-1 .gmfgb-mg-media,
-  .gmfgb-mg-grid.grid-size-1 .gmfgb-mg-button,
-  .gmfgb-mg-grid.grid-size-1 .gmfgb-mg-wrap {
-    width: calc(100% - 0px);
-    margin-bottom: 20px;
-  }
-  .gmfgb-mg-grid.grid-size-2 .gmfgb-mg-media,
-  .gmfgb-mg-grid.grid-size-2 .gmfgb-mg-button,
-  .gmfgb-mg-grid.grid-size-2 .gmfgb-mg-wrap {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-  }
-  .gmfgb-mg-grid.grid-size-3 .gmfgb-mg-media,
-  .gmfgb-mg-grid.grid-size-3 .gmfgb-mg-button,
-  .gmfgb-mg-grid.grid-size-3 .gmfgb-mg-wrap {
-    width: calc(33.3333333333% - 13.3333333333px);
-    margin-bottom: 20px;
-  }
-  .gmfgb-mg-grid.grid-size-4 .gmfgb-mg-media,
-  .gmfgb-mg-grid.grid-size-4 .gmfgb-mg-button,
-  .gmfgb-mg-grid.grid-size-4 .gmfgb-mg-wrap {
-    width: calc(25% - 15px);
-    margin-bottom: 20px;
-  }
-  .gmfgb-mg-grid.grid-size-5 .gmfgb-mg-media,
-  .gmfgb-mg-grid.grid-size-5 .gmfgb-mg-button,
-  .gmfgb-mg-grid.grid-size-5 .gmfgb-mg-wrap {
-    width: calc(20% - 16px);
-    margin-bottom: 20px;
-  }
-}
-@media (min-width: 561px) and (max-width: 767px) {
-  .gmfgb-mg-grid .gmfgb-mg-media,
-  .gmfgb-mg-grid .gmfgb-mg-button,
-  .gmfgb-mg-grid .gmfgb-mg-wrap {
-    width: calc(33.33% - 13.33px);
-    margin-bottom: 20px;
-  }
-}
-@media (min-width: 320px) and (max-width: 560px) {
-  .gmfgb-mg-grid .gmfgb-mg-media,
-  .gmfgb-mg-grid .gmfgb-mg-button,
-  .gmfgb-mg-grid .gmfgb-mg-wrap {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-  }
-}
-
-.gmfgb-mg-fancy-custom .fancybox-video,
-.gmfgb-mg-fancy-custom .fancybox-image {
-  position: static !important;
-}
-
-.image-caption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 12px;
-  background-color: rgba(0, 0, 0, 0.25);
-  z-index: 1;
-  font-size: 16px;
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-block-1 {
+  background-color: #37a5e4;
   color: #fff;
-  width: 100%;
-  max-height: 70%;
-  overflow: auto;
+  padding: 2px;
 }
 
-.gmfgb-mg-media {
-  position: relative;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 0;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.gmfgb-mg-media > a {
-  display: block;
-}
-.gmfgb-mg-media img {
+video {
   width: 100%;
-}
-.gmfgb-mg-media svg {
-  background: #ffffff;
-  padding: 5px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  border-radius: 100px;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
