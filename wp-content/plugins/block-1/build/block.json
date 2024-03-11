@@ -6,21 +6,11 @@
   "title": "Maitri Block",
   "category": "widgets",
   "icon": "format-aside",
-  "description": "This is a block created by create-block by Guternberg.",
+  "description": "This is a block created by create-block by Gutenberg.",
   "attributes": {
     "messages": {
       "type": "string",
       "default": "Default Value"
-    },
-    "mediaURL": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "img",
-      "attribute": "src"
-    },
-    "videoURL": {
-      "type": "string",
-      "default": ""
     },
     "repeater_field": {
       "type": "array",

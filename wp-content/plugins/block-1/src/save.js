@@ -17,6 +17,27 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 
+// export default function save(props) {
+//     const { messages, repeater_field } = props.attributes;
+
+//     return (
+//         <div { ...useBlockProps.save() }>
+//             <p>{ `Block 1 – ${messages}!` }</p>
+
+//             {repeater_field && repeater_field.map((row, index) => (
+//                 <div key={index}>
+//                     {row.image_upload && <img src={row.image_upload} alt="Uploaded Image" style={{ maxWidth: '100%' }} />}
+//                     {row.video_upload && (
+//                         <video src={row.video_upload} controls width="300" height="auto">
+//                             Your browser does not support the video tag.
+//                         </video>
+//                     )}
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
+
 export default function save(props) {
     const { messages, repeater_field } = props.attributes;
 
@@ -26,12 +47,11 @@ export default function save(props) {
 
             {repeater_field && repeater_field.map((row, index) => (
                 <div key={index}>
-                    {row.image_upload && <img src={row.image_upload} alt="Uploaded Image" style={{ maxWidth: '100%' }} />}
-                    {row.video_upload && (
-                        <video src={row.video_upload} controls width="300" height="auto">
-                            Your browser does not support the video tag.
-                        </video>
-                    )}
+                    {row.image_uploads.map((url, i) => (
+                        <div key={i}>
+                            <img src={url} alt="Uploaded Image" style={{ maxWidth: '100%' }} />
+                        </div>
+                    ))}
                 </div>
             ))}
         </div>
