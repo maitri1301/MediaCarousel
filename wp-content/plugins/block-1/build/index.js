@@ -54,146 +54,12 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-// export default function Edit(props) {
-
-// 	const handleAddRow = () => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows.push({ image_upload: "", video_upload: "" });
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleRemoveRow = (index) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows.splice(index, 1);
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleImageUpload = (index, url) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows[index].image_upload = url;
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleVideoUpload = (index, url) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows[index].video_upload = url;
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	return (
-// 		// <p { ...useBlockProps() }>
-// 		// 	{ __(` Block 1 –${props.attributes.messages}!`, 'block-1' ) }
-// 		// </p>
-
-// 		<div {...useBlockProps()}>
-// 			<TextControl
-// 				label="Enter Your Name : "
-// 				className="form-control"
-// 				type="text"
-// 				value={props.attributes.messages}
-// 				onChange={(value) => props.setAttributes({ messages: value })}
-// 			/>
-// 			{/* Repeation field */}
-// 			{props.attributes.repeater_field.map((row, index) => (
-// 				<div key={index}>
-// 					{/* Image Upload  */}
-// 					<MediaUploadCheck>
-// 						<MediaUpload
-// 							onSelect={(media) => handleImageUpload(index, media.url)}
-// 							allowedTypes={["image"]}
-// 							value={row.image_upload}
-// 							render={({ open }) => (
-// 								<div>
-// 									<Button onClick={open}>
-// 										{row.image_upload ? "Change Image" : "Upload Image"}
-// 									</Button>
-// 									{!row.image_upload ? (
-// 										<MediaPlaceholder
-// 											icon="format-image"
-// 											onSelect={open}
-// 											onSelectURL={(url) => handleImageUpload(index, url)}
-// 											allowedTypes={["image"]}
-// 											labels={{
-// 												title: __("Image", "your-plugin"),
-// 											}}
-// 										/>
-// 									) : (
-// 										<div>
-// 											<img
-// 												src={row.image_upload}
-// 												alt="Uploaded Image"
-// 												style={{ maxWidth: "100%" }}
-// 											/>
-// 											<Button
-// 												isDestructive
-// 												onClick={() => handleImageUpload(index, "")}
-// 											>
-// 												Remove Image
-// 											</Button>
-// 										</div>
-// 									)}
-// 								</div>
-// 							)}
-// 						/>
-// 					</MediaUploadCheck>
-
-// 					{/* Video Upload */}
-// 					<MediaUploadCheck>
-// 						<MediaUpload
-// 							onSelect={(media) => handleVideoUpload(index, media.url)}
-// 							allowedTypes={["video"]}
-// 							value={row.video_upload}
-// 							render={({ open }) => (
-// 								<div>
-// 								<Button onClick={open}>
-// 										{row.video_upload ? "Change Video" : "Upload Video"}
-// 									</Button>
-// 									{!row.video_upload ? (
-// 										<MediaPlaceholder
-// 											icon="video-alt3"
-// 											onSelect={open}
-// 											onSelectURL={(url) => handleVideoUpload(index, url)}
-// 											allowedTypes={["video"]}
-// 											labels={{
-// 												title: __("Video", "your-plugin"),
-// 											}}
-// 										/>
-// 									) : (
-// 										<div>
-// 											<video
-// 												src={row.video_upload}
-// 												controls
-// 												width="300"
-// 												height="auto"
-// 											>
-// 												Your browser does not support the video tag.
-// 											</video>
-// 											<Button
-// 												isDestructive
-// 												onClick={() => handleVideoUpload(index, "")}
-// 											>
-// 												Remove Video
-// 											</Button>
-// 										</div>
-// 									)}
-// 								</div>
-// 							)}
-// 						/>
-// 					</MediaUploadCheck>
-
-// 					<Button onClick={() => handleRemoveRow(index)}>Remove</Button>
-// 				</div>
-// 			))}
-// 			<Button onClick={handleAddRow}>Add Row</Button>
-// 		</div>
-// 	);
-// }
-
 function Edit(props) {
   const handleAddRow = () => {
     const newRows = [...props.attributes.repeater_field];
     newRows.push({
-      image_uploads: []
+      image_upload: "",
+      video_upload: ""
     });
     props.setAttributes({
       repeater_field: newRows
@@ -206,48 +72,94 @@ function Edit(props) {
       repeater_field: newRows
     });
   };
-  const handleImageUpload = (index, media) => {
+  const handleImageUpload = (index, url) => {
     const newRows = [...props.attributes.repeater_field];
-    newRows[index].image_uploads.push(media.url);
+    newRows[index].image_upload = url;
     props.setAttributes({
       repeater_field: newRows
     });
   };
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-    label: "Enter Your Name : ",
-    className: "form-control",
-    type: "text",
-    value: props.attributes.messages,
-    onChange: value => props.setAttributes({
-      messages: value
-    })
-  }), props.attributes.repeater_field.map((row, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: index
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
-    onSelect: media => handleImageUpload(index, media),
-    allowedTypes: ["image"],
-    multiple: true,
-    value: row.image_uploads,
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-      onClick: open
-    }, "Upload Image(s)"))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, row.image_uploads.map((url, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: i
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: url,
-    alt: "Uploaded Image",
-    style: {
-      maxWidth: "100%"
-    }
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    onClick: () => handleRemoveRow(index)
-  }, "Remove"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    onClick: handleAddRow
-  }, "Add Row"));
+  const handleVideoUpload = (index, url) => {
+    const newRows = [...props.attributes.repeater_field];
+    newRows[index].video_upload = url;
+    props.setAttributes({
+      repeater_field: newRows
+    });
+  };
+  return (
+    // <p { ...useBlockProps() }>
+    // 	{ __(` Block 1 –${props.attributes.messages}!`, 'block-1' ) }
+    // </p>
+
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+      label: "Enter Your Name : ",
+      className: "form-control",
+      type: "text",
+      value: props.attributes.messages,
+      onChange: value => props.setAttributes({
+        messages: value
+      })
+    }), props.attributes.repeater_field.map((row, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
+      onSelect: media => handleImageUpload(index, media.url),
+      allowedTypes: ["image"],
+      value: row.image_upload,
+      render: ({
+        open
+      }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        onClick: open
+      }, row.image_upload ? "Change Image" : "Upload Image"), !row.image_upload ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaPlaceholder, {
+        icon: "format-image",
+        onSelect: open,
+        onSelectURL: url => handleImageUpload(index, url),
+        allowedTypes: ["image"],
+        labels: {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image", "your-plugin")
+        }
+      }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+        src: row.image_upload,
+        alt: "Uploaded Image",
+        style: {
+          maxWidth: "100%"
+        }
+      }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        isDestructive: true,
+        onClick: () => handleImageUpload(index, "")
+      }, "Remove Image")))
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
+      onSelect: media => handleVideoUpload(index, media.url),
+      allowedTypes: ["video"],
+      value: row.video_upload,
+      render: ({
+        open
+      }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        onClick: open
+      }, row.video_upload ? "Change Video" : "Upload Video"), !row.video_upload ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaPlaceholder, {
+        icon: "video-alt3",
+        onSelect: open,
+        onSelectURL: url => handleVideoUpload(index, url),
+        allowedTypes: ["video"],
+        labels: {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Video", "your-plugin")
+        }
+      }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+        src: row.video_upload,
+        controls: true,
+        width: "300",
+        height: "auto"
+      }, "Your browser does not support the video tag."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+        isDestructive: true,
+        onClick: () => handleVideoUpload(index, "")
+      }, "Remove Video")))
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+      onClick: () => handleRemoveRow(index)
+    }, "Remove"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+      onClick: handleAddRow
+    }, "Add Row"))
+  );
 }
 
 /***/ }),
@@ -339,27 +251,6 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 
-// export default function save(props) {
-//     const { messages, repeater_field } = props.attributes;
-
-//     return (
-//         <div { ...useBlockProps.save() }>
-//             <p>{ `Block 1 – ${messages}!` }</p>
-
-//             {repeater_field && repeater_field.map((row, index) => (
-//                 <div key={index}>
-//                     {row.image_upload && <img src={row.image_upload} alt="Uploaded Image" style={{ maxWidth: '100%' }} />}
-//                     {row.video_upload && (
-//                         <video src={row.video_upload} controls width="300" height="auto">
-//                             Your browser does not support the video tag.
-//                         </video>
-//                     )}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
-
 function save(props) {
   const {
     messages,
@@ -369,15 +260,18 @@ function save(props) {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, `Block 1 – ${messages}!`), repeater_field && repeater_field.map((row, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: index
-  }, row.image_uploads.map((url, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: i
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: url,
+  }, row.image_upload && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: row.image_upload,
     alt: "Uploaded Image",
     style: {
       maxWidth: '100%'
     }
-  }))))));
+  }), row.video_upload && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+    src: row.video_upload,
+    controls: true,
+    width: "300",
+    height: "auto"
+  }, "Your browser does not support the video tag."))));
 }
 
 /***/ }),
@@ -462,7 +356,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/block-1","version":"0.1.0","title":"Maitri Block","category":"widgets","icon":"format-aside","description":"This is a block created by create-block by Gutenberg.","attributes":{"messages":{"type":"string","default":"Default Value"},"repeater_field":{"type":"array","default":[]}},"example":{},"supports":{"html":false},"textdomain":"block-1","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/block-1","version":"0.1.0","title":"Maitri Block","category":"widgets","icon":"format-aside","description":"This is a block created by create-block by Guternberg.","attributes":{"messages":{"type":"string","default":"Default Value"},"mediaURL":{"type":"string","source":"attribute","selector":"img","attribute":"src"},"videoURL":{"type":"string","default":""},"repeater_field":{"type":"array","default":[]}},"example":{},"supports":{"html":false},"textdomain":"block-1","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

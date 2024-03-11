@@ -36,199 +36,138 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-// export default function Edit(props) {
-
-// 	const handleAddRow = () => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows.push({ image_upload: "", video_upload: "" });
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleRemoveRow = (index) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows.splice(index, 1);
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleImageUpload = (index, url) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows[index].image_upload = url;
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	const handleVideoUpload = (index, url) => {
-// 		const newRows = [...props.attributes.repeater_field];
-// 		newRows[index].video_upload = url;
-// 		props.setAttributes({ repeater_field: newRows });
-// 	};
-
-// 	return (
-// 		// <p { ...useBlockProps() }>
-// 		// 	{ __(` Block 1 –${props.attributes.messages}!`, 'block-1' ) }
-// 		// </p>
-
-// 		<div {...useBlockProps()}>
-// 			<TextControl
-// 				label="Enter Your Name : "
-// 				className="form-control"
-// 				type="text"
-// 				value={props.attributes.messages}
-// 				onChange={(value) => props.setAttributes({ messages: value })}
-// 			/>
-// 			{/* Repeation field */}
-// 			{props.attributes.repeater_field.map((row, index) => (
-// 				<div key={index}>
-// 					{/* Image Upload  */}
-// 					<MediaUploadCheck>
-// 						<MediaUpload
-// 							onSelect={(media) => handleImageUpload(index, media.url)}
-// 							allowedTypes={["image"]}
-// 							value={row.image_upload}
-// 							render={({ open }) => (
-// 								<div>
-// 									<Button onClick={open}>
-// 										{row.image_upload ? "Change Image" : "Upload Image"}
-// 									</Button>
-// 									{!row.image_upload ? (
-// 										<MediaPlaceholder
-// 											icon="format-image"
-// 											onSelect={open}
-// 											onSelectURL={(url) => handleImageUpload(index, url)}
-// 											allowedTypes={["image"]}
-// 											labels={{
-// 												title: __("Image", "your-plugin"),
-// 											}}
-// 										/>
-// 									) : (
-// 										<div>
-// 											<img
-// 												src={row.image_upload}
-// 												alt="Uploaded Image"
-// 												style={{ maxWidth: "100%" }}
-// 											/>
-// 											<Button
-// 												isDestructive
-// 												onClick={() => handleImageUpload(index, "")}
-// 											>
-// 												Remove Image
-// 											</Button>
-// 										</div>
-// 									)}
-// 								</div>
-// 							)}
-// 						/>
-// 					</MediaUploadCheck>
-
-// 					{/* Video Upload */}
-// 					<MediaUploadCheck>
-// 						<MediaUpload
-// 							onSelect={(media) => handleVideoUpload(index, media.url)}
-// 							allowedTypes={["video"]}
-// 							value={row.video_upload}
-// 							render={({ open }) => (
-// 								<div>
-// 								<Button onClick={open}>
-// 										{row.video_upload ? "Change Video" : "Upload Video"}
-// 									</Button>
-// 									{!row.video_upload ? (
-// 										<MediaPlaceholder
-// 											icon="video-alt3"
-// 											onSelect={open}
-// 											onSelectURL={(url) => handleVideoUpload(index, url)}
-// 											allowedTypes={["video"]}
-// 											labels={{
-// 												title: __("Video", "your-plugin"),
-// 											}}
-// 										/>
-// 									) : (
-// 										<div>
-// 											<video
-// 												src={row.video_upload}
-// 												controls
-// 												width="300"
-// 												height="auto"
-// 											>
-// 												Your browser does not support the video tag.
-// 											</video>
-// 											<Button
-// 												isDestructive
-// 												onClick={() => handleVideoUpload(index, "")}
-// 											>
-// 												Remove Video
-// 											</Button>
-// 										</div>
-// 									)}
-// 								</div>
-// 							)}
-// 						/>
-// 					</MediaUploadCheck>
-
-// 					<Button onClick={() => handleRemoveRow(index)}>Remove</Button>
-// 				</div>
-// 			))}
-// 			<Button onClick={handleAddRow}>Add Row</Button>
-// 		</div>
-// 	);
-// }
-
-
 export default function Edit(props) {
-    const handleAddRow = () => {
-        const newRows = [...props.attributes.repeater_field];
-        newRows.push({ image_uploads: [] });
-        props.setAttributes({ repeater_field: newRows });
-    };
 
-    const handleRemoveRow = (index) => {
-        const newRows = [...props.attributes.repeater_field];
-        newRows.splice(index, 1);
-        props.setAttributes({ repeater_field: newRows });
-    };
+	const handleAddRow = () => {
+		const newRows = [...props.attributes.repeater_field];
+		newRows.push({ image_upload: "", video_upload: "" });
+		props.setAttributes({ repeater_field: newRows });
+	};
 
-    const handleImageUpload = (index, media) => {
-        const newRows = [...props.attributes.repeater_field];
-        newRows[index].image_uploads.push(media.url);
-        props.setAttributes({ repeater_field: newRows });
-    };
+	const handleRemoveRow = (index) => {
+		const newRows = [...props.attributes.repeater_field];
+		newRows.splice(index, 1);
+		props.setAttributes({ repeater_field: newRows });
+	};
 
-    return (
-        <div {...useBlockProps()}>
-            <TextControl
-                label="Enter Your Name : "
-                className="form-control"
-                type="text"
-                value={props.attributes.messages}
-                onChange={(value) => props.setAttributes({ messages: value })}
-            />
+	const handleImageUpload = (index, url) => {
+		const newRows = [...props.attributes.repeater_field];
+		newRows[index].image_upload = url;
+		props.setAttributes({ repeater_field: newRows });
+	};
 
-            {props.attributes.repeater_field.map((row, index) => (
-                <div key={index}>
-                    <MediaUploadCheck>
-                        <MediaUpload
-                            onSelect={(media) => handleImageUpload(index, media)}
-                            allowedTypes={["image"]}
-                            multiple
-                            value={row.image_uploads}
-                            render={({ open }) => (
-                                <div>
-                                    <Button onClick={open}>Upload Image(s)</Button>
-                                </div>
-                            )}
-                        />
-                    </MediaUploadCheck>
+	const handleVideoUpload = (index, url) => {
+		const newRows = [...props.attributes.repeater_field];
+		newRows[index].video_upload = url;
+		props.setAttributes({ repeater_field: newRows });
+	};
 
-                    <div>
-                        {row.image_uploads.map((url, i) => (
-                            <div key={i}>
-                                <img src={url} alt="Uploaded Image" style={{ maxWidth: "100%" }} />
-                            </div>
-                        ))}
-                    </div>
+	return (
+		// <p { ...useBlockProps() }>
+		// 	{ __(` Block 1 –${props.attributes.messages}!`, 'block-1' ) }
+		// </p>
 
-                    <Button onClick={() => handleRemoveRow(index)}>Remove</Button>
-                </div>
-            ))}
-            <Button onClick={handleAddRow}>Add Row</Button>
-        </div>
-    );
+		<div {...useBlockProps()}>
+			<TextControl
+				label="Enter Your Name : "
+				className="form-control"
+				type="text"
+				value={props.attributes.messages}
+				onChange={(value) => props.setAttributes({ messages: value })}
+			/>
+			{/* Repeation field */}
+			{props.attributes.repeater_field.map((row, index) => (
+				<div key={index}>
+					{/* Image Upload  */}
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={(media) => handleImageUpload(index, media.url)}
+							allowedTypes={["image"]}
+							value={row.image_upload}
+							render={({ open }) => (
+								<div>
+									<Button onClick={open}>
+										{row.image_upload ? "Change Image" : "Upload Image"}
+									</Button>
+									{!row.image_upload ? (
+										<MediaPlaceholder
+											icon="format-image"
+											onSelect={open}
+											onSelectURL={(url) => handleImageUpload(index, url)}
+											allowedTypes={["image"]}
+											labels={{
+												title: __("Image", "your-plugin"),
+											}}
+										/>
+									) : (
+										<div>
+											<img
+												src={row.image_upload}
+												alt="Uploaded Image"
+												style={{ maxWidth: "100%" }}
+											/>
+											<Button
+												isDestructive
+												onClick={() => handleImageUpload(index, "")}
+											>
+												Remove Image
+											</Button>
+										</div>
+									)}
+								</div>
+							)}
+						/>
+					</MediaUploadCheck>
+
+					{/* Video Upload */}
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={(media) => handleVideoUpload(index, media.url)}
+							allowedTypes={["video"]}
+							value={row.video_upload}
+							render={({ open }) => (
+								<div>
+								<Button onClick={open}>
+										{row.video_upload ? "Change Video" : "Upload Video"}
+									</Button>
+									{!row.video_upload ? (
+										<MediaPlaceholder
+											icon="video-alt3"
+											onSelect={open}
+											onSelectURL={(url) => handleVideoUpload(index, url)}
+											allowedTypes={["video"]}
+											labels={{
+												title: __("Video", "your-plugin"),
+											}}
+										/>
+									) : (
+										<div>
+											<video
+												src={row.video_upload}
+												controls
+												width="300"
+												height="auto"
+											>
+												Your browser does not support the video tag.
+											</video>
+											<Button
+												isDestructive
+												onClick={() => handleVideoUpload(index, "")}
+											>
+												Remove Video
+											</Button>
+										</div>
+									)}
+								</div>
+							)}
+						/>
+					</MediaUploadCheck>
+
+					<Button onClick={() => handleRemoveRow(index)}>Remove</Button>
+				</div>
+			))}
+			<Button onClick={handleAddRow}>Add Row</Button>
+		</div>
+	);
 }
+
