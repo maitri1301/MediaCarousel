@@ -106,6 +106,7 @@ function Edit(props) {
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
       onSelect: media => handleImageUpload(index, media.url),
       allowedTypes: ["image"],
+      multiple: true,
       value: row.image_upload,
       render: ({
         open
@@ -114,6 +115,7 @@ function Edit(props) {
       }, row.image_upload ? "Change Image" : "Upload Image"), !row.image_upload ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaPlaceholder, {
         icon: "format-image",
         onSelect: open,
+        multiple: true,
         onSelectURL: url => handleImageUpload(index, url),
         allowedTypes: ["image"],
         labels: {
@@ -356,7 +358,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/block-1","version":"0.1.0","title":"Maitri Block","category":"widgets","icon":"format-aside","description":"This is a block created by create-block by Guternberg.","attributes":{"messages":{"type":"string","default":"Default Value"},"mediaURL":{"type":"string","source":"attribute","selector":"img","attribute":"src"},"videoURL":{"type":"string","default":""},"repeater_field":{"type":"array","default":[]}},"example":{},"supports":{"html":false},"textdomain":"block-1","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/block-1","version":"0.1.0","title":"Maitri Block","category":"widgets","icon":"format-aside","description":"This is a block created by create-block by Guternberg.","attributes":{"messages":{"type":"string","default":"Default Value"},"mediaURL":{"type":"array","source":"attribute","selector":"img","attribute":"src"},"videoURL":{"type":"string","default":""},"repeater_field":{"type":"array","default":[]}},"example":{},"supports":{"html":false},"textdomain":"block-1","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

@@ -83,6 +83,7 @@ export default function Edit(props) {
 						<MediaUpload
 							onSelect={(media) => handleImageUpload(index, media.url)}
 							allowedTypes={["image"]}
+							multiple={true}
 							value={row.image_upload}
 							render={({ open }) => (
 								<div>
@@ -93,6 +94,7 @@ export default function Edit(props) {
 										<MediaPlaceholder
 											icon="format-image"
 											onSelect={open}
+											multiple={true}
 											onSelectURL={(url) => handleImageUpload(index, url)}
 											allowedTypes={["image"]}
 											labels={{

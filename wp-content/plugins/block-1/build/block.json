@@ -13,7 +13,7 @@
       "default": "Default Value"
     },
     "mediaURL": {
-      "type": "string",
+      "type": "array",
       "source": "attribute",
       "selector": "img",
       "attribute": "src"
